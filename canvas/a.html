@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+#ground {
+	background: url('sand.png') 0 0;
+	width: 300px;
+	height: 300px;
+}
+
+canvas {
+	border: 1px solid red;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(function() {
+
+	// Canvas setting
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	
+	var canvasOffset = $("#canvas").offset();
+	var offsetX = canvasOffset.left;
+	var offsetY = canvasOffset.top;
+	
+	// Animation variables
+	var currentX = 10;
+	var currentY = 10;
+	var frameCount = 30;
+	var timer;
+	var points;
+	var currentFrame;
+	
+	
+	function animate() {
+		var point = points[currentFrame++];
+		draw(point.x, point.y);
+		currentX = point.x;
+		currentY = point.y;
+	
+		// refire the timer until out-of-points
+		if (currentFrame < points.length) {
+			timer = setTimeout(animate, 1000 / 60);
+		}
+	}
+	
+	function linePoints(x1, y1, x2, y2, frames) {
+		var dx = x2 - x1;
+		var dy = y2 - y1;
+		var length = Math.sqrt(dx * dx + dy * dy);
+		frames *= length/100;
+		var incrementX = dx / frames;
+		var incrementY = dy / frames;
+		var a = new Array();
+	
+		a.push({
+			x: x1,
+			y: y1
+		});
+		
+		for (var frame = 0; frame < frames - 1; frame++) {
+			a.push({
+				x: x1 + (incrementX * frame),
+				y: y1 + (incrementY * frame)
+			});
+		}
+		
+		a.push({
+			x: x2,
+			y: y2
+		});
+		
+		return (a);
+	}
+	
+	function draw(x, y) {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.beginPath();
+		// existing img ctx.drawImage(img, x, y);
+		var img = new Image();
+  		img.src = "char.png";
+  		img.onload = function() {ctx.drawImage(img, x, y);};
+		/*ctx.fillStyle = "skyblue";
+		ctx.strokeStyle = "gray";
+		ctx.rect(x, y, 30, 20);
+		ctx.fill();
+		ctx.stroke();*/
+	}
+	
+	function handleMouseDown(e) {
+		clearTimeout(timer);
+		mouseX = parseInt(e.clientX - offsetX);
+		mouseY = parseInt(e.clientY - offsetY);
+		$("#mousecoord").html("Mouse coordinates: " + mouseX + " / " + mouseY);
+	
+		// Put your mousedown stuff here
+		points = linePoints(currentX, currentY, mouseX, mouseY, frameCount);
+		currentFrame = 0;
+		currentX = mouseX;
+		currentY = mouseY;
+		animate();
+		bgX = mouseX - currentX;
+		bgY = mouseY - currentY;
+		var bgXY = bgX + "px " + bgY + "px";
+		$('#ground').css('background-position', bgXY);
+	}
+	
+	$("#canvas").mousedown(function (e) {
+		handleMouseDown(e);
+	});
+	
+	draw(10, 10);
+});
+</script>
+</head>
+
+<body>
+	<img id="img" src="a.jpg" style="visibility:hidden" />
+	<p id="mousecoord">Mouse coordinates</p>
+    <div id="ground">
+		<canvas id="canvas" width="350px" height="350px"></canvas>
+    </div>
+</body>
+</html>

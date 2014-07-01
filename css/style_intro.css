@@ -1,0 +1,374 @@
+/* 
+	* Author: unstoppz
+	* Project: ub3rl33tg4me
+	* Copyright (c) 2012. Powered by Codebox 
+	
+	* File: Intro page CSS file
+
+
+/**********************************************************
+/ Main CSS 
+***********************************************************/
+
+html { 
+	background: url("../img/a.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Tahoma', Verdana, Trebuchet MS, Arial;
+	font-size: 14px;
+	outline: none;
+	cursor: url("../img/cursor.png"), auto;
+}
+
+::-moz-selection { background: #D9A300; color: #fff; text-shadow: none; }
+::selection { background: #D9A300; color: #fff; text-shadow: none; }
+
+input {
+	cursor: url("../img/cursor_text.png"), auto;
+}
+
+input[type=submit] {
+	cursor: url("../img/cursor_hover.png"), auto;	
+}
+
+select {
+	cursor: url("../img/cursor_hover.png"), auto;
+}
+
+.spacer {
+	height: 15px;
+}
+
+img.tip {
+	cursor: url("../img/cursor_info.png"), auto;
+}
+
+a.footer:link { text-decoration: none; color: #EEE3D1; }
+a.footer:visited { text-decoration: none; color: #EEE3D1; }
+a.footer:active { text-decoration: none; color: #EEE3D1; }
+a.footer:hover { text-decoration: none; color: #FFF; cursor: url("../img/cursor_hover.png"), auto; }
+
+a:link { text-decoration: none; color: #6C4304; }
+a:visited { text-decoration: none; color: #6C4304; }
+a:active { text-decoration: none; color: #6C4304; }
+a:hover { text-decoration: underline; color: #A97938; cursor: url("../img/cursor_hover.png"), auto; }
+
+#loader {
+	position: absolute;
+	display: block;
+}
+
+#logo {
+	background-image: url('../img/logo.png');
+	width: 400px;
+	height: 100px;
+	margin: 0px auto;
+}
+
+#footer {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	font-size: 12px;
+	color: #EEE3D1;
+	text-align: right;
+	padding: 15px;
+}
+
+
+/**********************************************************
+/ General Form
+***********************************************************/
+
+#form_wrap {
+    position: relative;
+	width: 384px;
+	height: 365px;
+	margin: 0 auto;
+}
+
+#form {
+	position: relative;
+	background-image: url('../img/intro_form.png');
+	width: 384px;
+	height: 366px;
+}
+
+#tab_register {
+	position: absolute;
+	background-image: url('../img/register_icon.png'), url('../img/intro_form_reg_tab.png');
+    left: 356px;
+	top: 60px;
+	width: 52px;
+	height: 84px;
+	cursor: url("../img/cursor_hover.png"), auto;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+#tab_login {
+	position: absolute;
+	background-image: url('../img/login_icon.png'), url('../img/intro_form_log_tab.png');
+    left: 356px;
+	top: 150px;
+	width: 52px;
+	height: 84px;
+	cursor: url("../img/cursor_hover.png"), auto;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+#tab_description {
+	position: absolute;
+	background-image: url('../img/description_icon.png'), url('../img/intro_form_descr_tab.png');
+    left: 356px;
+	top: 240px;
+	width: 52px;
+	height: 84px;
+	cursor: url("../img/cursor_hover.png"), auto;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.tab_shadow {
+	position: absolute;
+	background-image: url('../img/tab_shadow.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+	left: 384px;
+	width: 25px;
+	height: 84px;	
+}
+
+#tab_shadow_register {
+	top: 60px;
+}
+
+#tab_shadow_login {
+	top: 150px;
+}
+
+#tab_shadow_description {
+	top: 240px;
+}
+
+.selectsv {
+	background-color: #C79E67;
+	background-image: url('../img/selectserver_icon.png');
+	background-repeat: no-repeat;
+	width: 138px;
+	height: 30px;	
+	font-size: 13px;
+	font-style: italic;
+	color: #43331F;
+	text-align: right;
+	text-shadow: 1px 1px 0px #E9D3AB;
+	border: 1px solid #F6DD9C;
+	outline: 1px solid #DFB869;
+	padding: 4px;
+}
+
+.welcome_message {
+	font-family: "Lucida Calligraphy", Aspire, Trebuchet MS;
+	font-size: 15px;	
+}
+
+
+
+/***********************************************************
+/	Register tab 
+**********************************************************/
+
+#register_box {
+	display: none;
+	padding: 70px 30px 0px 50px;
+}
+
+#register_box_text {
+	background: url('../img/input_regbox_bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 300px;
+	font-size: 15px;
+	color: #43341F;
+	text-shadow: 1px 1px 0px #F8F0D4;
+	padding: 5px 0px 20px 0px;
+}
+
+.registerinput {
+	background-color: #FBEFD0;
+	width: 136px;
+	height: 15px;
+	text-align: center;
+	border: 1px solid #F6DD9C;
+	outline: 1px solid #CD9B3F;
+}
+
+.registerinput_clicked {
+	background-color: #FBEFD0;
+	width: 136px;
+	height: 15px;
+	text-align: center;
+	border: 1px solid #E4D8B8;
+	outline: 1px solid #CC993C;
+	box-shadow: inset 0 0 5px #E4D8B8;
+	-moz-box-shadow: inset 0 0 5px #E4D8B8;
+	-webkit-box-shadow: inset 0 0 5px #E4D8B8;
+}
+
+#registerbutton_wrapper {
+	width: 340px;
+	margin-left: -25px;
+}
+
+#registerbutton {
+	background-image: url('../img/registerbutton.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 210px;
+	height: 38px;
+	margin: 0 auto;
+}
+
+#registerbutton:hover {
+	background-image: url('../img/registerbutton_h.png');	
+}
+
+#registerbutton_submit {
+	background: transparent;
+	width: 210px;
+	height: 35px;
+	border: 0;
+}
+
+#inputtable {
+	width: 300px;
+	text-align:center;
+}
+
+.tipsy {
+	background-image: url("../img/tip.gif");
+	background-repeat: no-repeat;
+	font-size: 12px;
+	padding: 10px;
+}
+
+.tipsy-inner {
+	background-color: #000;
+	max-width: 200px;
+	font-size: 14px;
+	color: #FFF;
+	text-align: center;
+	border-radius: 3px;
+	padding: 5px 8px 4px 8px;
+}
+
+.tipsy-inner {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.tipsy-north { background-position: top center; }
+.tipsy-south { background-position: bottom center; }
+.tipsy-east { background-position: right center; }
+.tipsy-west { background-position: left center; }
+
+
+/***********************************************************
+/	Log-in tab 
+**********************************************************/
+
+#login_box {
+	display: none;
+	padding: 70px 30px 0px 50px;
+}
+
+#login_box_text {
+	background: url('../img/input_logbox_bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 300px;
+	font-size: 18px;
+	color: #43341F;
+	text-shadow: 1px 1px 0px #F8F0D4;
+	padding: 15px 0px 20px 0px;
+}
+
+.logininput {
+	background-color: #FBEFD0;
+	width: 136px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid #F6DD9C;
+	outline: 1px solid #CD9B3F; 
+}
+
+.logininput_clicked {
+	background-color: #FBEFD0;
+	width: 136px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid #E4D8B8;
+	outline: 1px solid #CC993C;
+	box-shadow: inset 0 0 5px #E4D8B8;
+	-moz-box-shadow: inset 0 0 5px #E4D8B8;
+    -webkit-box-shadow: inset 0 0 5px #E4D8B8;
+}
+
+#loginbutton_wrapper {
+	width: 340px;
+	margin-left: -25px;
+}
+
+#loginbutton {
+	background-image: url('../img/playbutton.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 210px;
+	height: 38px;
+	margin: 0 auto;
+}
+
+#loginbutton:hover {
+	background-image: url('../img/playbutton_h.png');	
+}
+
+#loginbutton_submit {
+	background: transparent;
+	width: 210px;
+	height: 35px;
+	border: 0;
+}
+
+
+/***********************************************************
+/	Description tab 
+**********************************************************/
+
+#descr_box {
+	display: block;
+	padding: 70px 30px 0px 50px;
+}
+	
+#descr_box_text {
+	width: 300px;
+	font-family: 'Tahoma', Verdana, Trebuchet MS, Arial;
+	font-size: 14px;
+	text-align: center;
+	padding: 15px 0px 20px 0px;
+}
+
+#descr_box_bottom {
+	margin-left: 80px;
+}

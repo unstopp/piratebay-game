@@ -1,0 +1,25 @@
+# Set the default page
+# ----------------------------------------------------
+DirectoryIndex intro.php
+
+
+# Set the 404 not found custom page
+# ----------------------------------------------------
+ErrorDocument 404 http://unstopp.com/game/404.html
+
+
+# Rewrite rules for the URL
+# ----------------------------------------------------
+#RewriteEngine on
+#RewriteBase /
+
+RewriteCond %{REQUEST_URI} .html
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^intro.html intro.php [PT]
+
+
+
+# Deny connection to website for:
+# ----------------------------------------------------
+
+deny from 62.231.102.43
